@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean class="com.refcore.College" name="refclg">
+		<property name="clgid" value="78087829" />
+		<property name="clgname" value="SSKB Gargoti" />
+	</bean>
+
+	<bean class="com.refcore.Student" name="std">
+		<property name="stdId" value="12332" />
+		<property name="name" value="Omkar Patil" />
+
+		<!-- <property name="name" ref="refclg"/> -->
+		<property name="clg">
+			<ref bean="refclg" />
+		</property>
+	</bean>
+
+<!-- Insertion of second bean -->
+	
+		<bean class="com.refcore.College" name="refclg2">
+		<property name="clgid" value="6932393" />
+		<property name="clgname" value="Gcg Gadhinglaj" />
+	</bean>
+
+	<bean class="com.refcore.Student" name="std2">
+		<property name="stdId" value="7363" />
+		<property name="name" value="Snehal Patil" />
+
+		<!-- <property name="name" ref="refclg"/> -->
+		<property name="clg">
+			<ref bean="refclg2" />
+		</property>
+	</bean>
+
+</beans>

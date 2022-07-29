@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 1st injection of bean -->
+	<bean class="com.collectiondemo.Employee" name="emp1">
+		<property name="empid" value="123" />
+		<property name="empName" value="Vighnesh Ganmale" />
+		<property name="phones">
+			<list>		
+<!--for single insertion there is no need to define sets of value only insrt <value =7066300733/>  -->
+<!-- for empty just define <list></list> -->
+				<value>7066300733</value>
+				<value>8600909923</value>
+				<value>9420891825</value>
+			</list>
+		</property>
+
+		<property name="address">
+			<set>
+				<value>Kolhpaur</value>
+				<value>Pune</value>
+				<value>Mumbai</value>
+			</set>
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="JAVA" value="2 months" />
+				<entry key="Python" value="1 months" />
+				<entry key="AWS" value="1.5 months" />
+			</map>
+		</property>
+		
+		<property name="jdbc">
+			<props>
+				<prop key="url">jdbc:mysql://localhost3306:hiber</prop>
+				<prop key="username">root</prop>
+				<prop key="password">Dead@3306</prop>
+				
+			</props>
+		</property>
+	</bean>
+
+	<!-- 2nd injection bean -->
+	<bean class="com.collectiondemo.Employee" name="emp2">
+		<property name="empid" value="456" />
+		<property name="empName" value="Rohit Patil" />
+		<property name="phones">
+			<list>
+				<value>9619554047</value>
+				<value>9028181585</value>
+				<value>9404081744</value>
+			</list>
+		</property>
+
+		<property name="address">
+			<set>
+				<value>Gargoti</value>
+				<value>Delhi</value>
+				<value>Karad</value>
+			</set>
+		</property>
+
+		<property name="courses">
+			<map>
+				<entry key="C++" value="3 months" />
+				<entry key="selenium" value="2 months" />
+				<entry key="coreJava" value="2.5 months" />
+			</map>
+		</property>
+		
+		<property name="jdbc">
+			<props>
+				<prop key="url">jdbc:mysql://localhost3306:hiber</prop>
+				<prop key="username">root</prop>
+				<prop key="password">Dead@3306</prop>
+				
+			</props>
+		</property>
+	</bean>
+
+</beans>

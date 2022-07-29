@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context-2.5.xsd
+  http://www.springframework.org/schema/util 
+  http://www.springframework.org/schema/util/spring-util-2.5.xsd">
+
+	
+	<!-- standalone list -->
+	<util:list list-class="java.util.LinkedList" id="buddy">
+		<value>Mahesh</value>
+		<value>Sanket</value>
+		<value>Vighanesh</value>
+	</util:list>
+	
+	<!-- Standlone Set -->
+	<util:set set-class="java.util.HashSet" id="teach">
+		<value>Jay Mohite</value>
+		<value>Ananta Eknarayan</value>
+		<value>Kanade sir</value>
+	</util:set>
+	
+	<!-- Standalone Map -->
+	<util:map map-class="java.util.HashMap" id="fee">
+		<entry key="Spring" value="8999"/>
+		<entry key="Core Java" value="3345"/>
+		<entry key="Hibernate" value="33455"/>
+	</util:map>
+	
+	<!-- Standalone Properties -->
+	<util:properties id="jdbc">
+		<prop key="url">jdbc:mysql://localhost:3306/hiber</prop>
+		<prop key="DriverClass">com.mysql.cj.jdbc.Driver</prop>
+		<prop key="username">root</prop>
+		<prop key="password">Dead@7066</prop>
+	</util:properties>
+	
+	
+	<!-- 1st injection of bean -->
+	<bean class="com.standalone.Friends" name="friend">
+		<property name="bestFriends" ref="buddy"/>
+		<property name="teacher" ref="teach"/>
+		<property name="feestructure" ref="fee"/>
+		<property name="jdbc" ref="jdbc"></property>
+	</bean>
+</beans>

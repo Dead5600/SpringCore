@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- Insertion of first bean -->
+	<bean class="com.constinject.Course" name="course1">
+		<constructor-arg value="Core Java" type="String" />
+		<constructor-arg value="2 months" type="String" />
+	</bean>
+
+	<bean class="com.constinject.Person" name="per1">
+		<constructor-arg value="10" type="int" />
+		<constructor-arg value="Pravin Indulkar" type="String" />
+		<constructor-arg ref="course1" />
+		<constructor-arg>
+			<list>
+				<value>Kolhapur</value>
+				<value>Mumbai</value>
+				<value>Pune</value>
+				<value>Gadhinglaj</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean class="com.constinject.Addition" name="add">
+		<constructor-arg value="10" type="int" index="1" />
+		<constructor-arg value="20" type="int" index="0" />
+	</bean>
+</beans>
